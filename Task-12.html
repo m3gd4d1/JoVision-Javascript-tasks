@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 12</title>
+</head>
+<body>
+    <form id="userForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age"><br><br>
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const timestamp = new Date().toLocaleString();
+
+            const userObject = {
+                name: name,
+                age: age,
+                timestamp: timestamp
+            };
+
+            alert(`Your name is: ${userObject.name}\nYour age is: ${userObject.age}\nTimestamp: ${userObject.timestamp}`);
+        }
+    </script>
+</body>
+</html>
