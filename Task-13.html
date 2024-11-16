@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 13</title>
+</head>
+<body>
+    <label for="name">Name:</label>
+    <input type="text" id="name">
+    <button id="submit">Submit</button>
+
+    <script>
+        document.getElementById('submit').addEventListener('click', async () => {
+            const name = document.getElementById('name').value;
+            if (name) {
+                try {
+                    const response = await fetch(`https://api.agify.io?name=${name}`);
+                    const { age } = await response.json();
+                    alert(`Your name is: ${name}\nYour age is: ${age}`);
+                } catch (error) {
+                    console.error('Error fetching age:', error);
+                }
+            } else {
+                alert('Please enter a name.');
+            }
+        });
+    </script>
+</body>
+</html>
