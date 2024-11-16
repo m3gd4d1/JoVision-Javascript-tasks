@@ -15,6 +15,9 @@
                 .then(d => {
                     document.getElementById("replace").innerHTML = `${d.ip}`;
                 })
+                .catch(error => {
+                    window.alert(`Error: ${error.message}`);
+                });
         }
     </script>
 </body>
